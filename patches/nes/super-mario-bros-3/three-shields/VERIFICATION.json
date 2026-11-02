@@ -1,0 +1,13 @@
+{
+  "project": "SMB3 NES Three Shields",
+  "version": "0.2",
+  "rom_revision": "Super Mario Bros. 3 (USA) (PRG1)",
+  "source_sha256": "4377a7f5e6eb50bdd2ac6f249bf1a7085500aca8eb41f38545c3a2731c51a579",
+  "patch_sha256": "ad4b65ab564ef3dddc26dfee9cca89617fddb5cd06af2e4b108742dcf031255d",
+  "patch_format": "IPS",
+  "patch_size_bytes": 7225,
+  "patched_rom_sha256": "fa84a7f83d1a72639c5e1b270ac160cb2706b31807200cce26a1ddf7f5b8b7ce",
+  "roundtrip_pass": true,
+  "release_status": "community_playtest",
+  "notes": "No ROM included; longer regression scope remains pending"
+}
