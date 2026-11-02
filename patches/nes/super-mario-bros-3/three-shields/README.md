@@ -16,6 +16,30 @@ Instead of losing a life on an ordinary hit as Small Mario, you get **three shie
 
 If the link opens a GitHub file page instead of downloading, tap the **download icon** or **View raw**.
 
+## 🧩 Choose a patcher for your device
+
+**Easiest option for most people:** [Rom Patcher JS (opens in your browser)](https://www.marcrobledo.com/RomPatcher.js/). It supports IPS patches and works in modern desktop and mobile browsers. No separate patching app is required.
+
+| Your device | Recommended IPS patcher | How to use it |
+|---|---|---|
+| **Windows** | [Floating IPS / Flips](https://github.com/royTam1/flips/releases) | Download the Windows version; choose **Apply Patch**. |
+| **Mac (macOS)** | [MultiPatch](https://github.com/Sappharad/MultiPatch/releases) | Install the Mac app and apply the `.ips` file to your ROM. |
+| **Linux** | [Floating IPS / Flips](https://github.com/royTam1/flips) or [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) | Use the Linux/GTK build if available, or patch in your browser. |
+| **Android** | [UniPatcher on Google Play](https://play.google.com/store/apps/details?id=org.emunix.unipatcher) ([F-Droid alternative](https://f-droid.org/packages/org.emunix.unipatcher/)) | Select the IPS patch, original ROM and output filename, then apply. |
+| **iPhone / iPad (iOS/iPadOS)** | [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) | Use Safari to select both files from Files, tap **Apply patch**, then save the result. |
+| **ChromeOS / Chromebook** | [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) | Use the browser patcher; select your ROM and IPS patch. |
+
+### Quick browser method (works on computers and many phones)
+
+1. [Download the Three Shields IPS patch](SMB3_NES_Three_Shields_v0.2_US_PRG1.ips) and keep your original **USA PRG1** `.nes` file handy.
+2. Open [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/).
+3. Under **ROM file**, select your original `.nes` game.
+4. Under **Patch file**, select our `.ips` patch.
+5. Choose **Apply patch**, then save the resulting `.nes` file.
+6. Open the new `.nes` game in a compatible NES emulator.
+
+**Important:** A *patcher* creates the modified ROM; an *emulator* plays it. They are separate tools. Some phones may require using the Files app to save or move the patched game. If you get an error or the game acts strangely, verify the original ROM is the **USA PRG1** revision. Don't patch an already modified ROM.
+
 ## 🎮 How to get it running
 
 You need three things:
