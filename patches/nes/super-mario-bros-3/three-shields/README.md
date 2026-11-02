@@ -87,6 +87,10 @@ The PRG1 v0.2 patch is based on our user-playtested NES build. The PRG0 playtest
 
 **Still looking for community testing:** other worlds, Luigi/two-player, special suits, pipes, bonus rooms, and long sessions. It is a **playtest release**, not a promise that every possible scene has been checked.
 
+## 🧪 Help regression-test both versions
+
+**[Open the PRG0 + PRG1 regression testing to-do list](REGRESSION_TESTING.md)**. It includes power-ups and suits, pipes and bonus rooms, two-player play, long sessions, emulator compatibility, and a bug-report template. Each revision has its own checkbox so a PRG0 result is never mistaken for a PRG1 result.
+
 ## 🐛 Found a bug?
 
 [Open a GitHub issue](https://github.com/neohack2023/ROM-Modding-Lab/issues/new) and tell us:
