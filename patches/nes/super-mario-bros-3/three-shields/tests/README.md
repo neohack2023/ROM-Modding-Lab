@@ -33,3 +33,9 @@ The recorded run used Host 02 wrappers under the private AIOS NES workspace
 Those wrappers use absolute Host 02 paths and are not portable by themselves.
 
 **Do not check off community suit/pipe tests just because these probes passed.**
+
+## Pipe-transition investigation (not passed)
+
+The [passive pipe recorder](p0_pipe_tracker.lua) watches `Level_PipeMove` ($0571), `Player_InPipe` ($058C), `Level_JctCtl` ($03DE), scene, and HP. It never writes pipe-control RAM.
+
+A bounded auto-run reached a pit and died on both revisions. Although $058C briefly became nonzero, the native pipe-movement and junction controls stayed at zero. See the [qualification record](p0_pipe_qualification.json). **No pipe traversal has passed.** The next gate needs a genuine in-level entry, destination, and unchanged HP.

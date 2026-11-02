@@ -1,0 +1,31 @@
+{
+  "scope": "NES SMB3 dual revision exploratory pipe-state trace",
+  "acceptance_rule": "Native pipe control + grounded destination transition + HP persistence; an isolated Player_InPipe flag is insufficient",
+  "community_pipe_checkboxes_complete": false,
+  "results": [
+    {
+      "revision": "PRG0",
+      "qualification": "NO_VERIFIED_PIPE_TRANSIT",
+      "native_pipe_move_nonzero_events": 0,
+      "inpipe_flag_nonzero_events": 191,
+      "junction_nonzero_events": 0,
+      "first_inpipe_flag_frame": 454,
+      "first_map_exit_frame": 658,
+      "hp_on_first_inpipe": 0,
+      "hp_at_map_exit": 0,
+      "false_positive_prevention": "$058C alone cannot qualify a native pipe transition; no entrance->destination HP persistence was demonstrated"
+    },
+    {
+      "revision": "PRG1",
+      "qualification": "NO_VERIFIED_PIPE_TRANSIT",
+      "native_pipe_move_nonzero_events": 0,
+      "inpipe_flag_nonzero_events": 191,
+      "junction_nonzero_events": 0,
+      "first_inpipe_flag_frame": 454,
+      "first_map_exit_frame": 658,
+      "hp_on_first_inpipe": 0,
+      "hp_at_map_exit": 0,
+      "false_positive_prevention": "$058C alone cannot qualify a native pipe transition; no entrance->destination HP persistence was demonstrated"
+    }
+  ]
+}
