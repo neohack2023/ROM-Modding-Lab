@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "system": "NES_SMB3_THREE_SHIELDS",
+  "authority": "community_research_hypotheses_not_runtime_proof",
+  "evidence_state": "external_sources_plus_prior_host02_bounded_trace",
+  "recorded_date": "2026-11-02",
+  "topics": [
+    {
+      "id": "H-SMB3-PIPE-STATE-001",
+      "claim": "A pipe-related state observation during death may be inherited SMB3 engine behavior rather than caused by Three Shields.",
+      "state": "unverified_hypothesis",
+      "host02_observation": {
+        "scenario": "Automated World 1-1 run at both modified PRG0 and modified PRG1",
+        "hp_at_first_pipe_flag": 0,
+        "player_in_pipe_first_frame": 454,
+        "native_pipe_move_nonzero_events": 0,
+        "native_junction_nonzero_events": 0,
+        "result": "No genuine pipe entry or exit observed; $058C alone insufficient"
+      },
+      "competing_explanations": [
+        "Original engine transiently sets/retains pipe-related state during death or other animation",
+        "Three Shields alters timing and produces unexpected state interaction",
+        "Incorrect meaning or aliasing of an observed RAM flag"
+      ],
+      "acceptance": [
+        "Record stock PRG0, patched PRG0, stock PRG1 and patched PRG1 with the same input movie and initial conditions.",
+        "Capture per-frame $0571 Level_PipeMove, $058C Player_InPipe, $03DE Level_JctCtl, $0729 Map_Operation, $0552 invulnerability, $0553 Star, $7FCE HP, $ED suit, $0736 lives.",
+        "For write/exec event, capture CPU PC plus MMC3-qualified physical PRG bank and relevant call path.",
+        "Require native pipe-entrance, destination and exit events; a nonzero $058C flag alone is not a pipe pass.",
+        "Repeat boundary collisions and normal pipe traversal in unmodified ROM before classifying behavior as pre-existing."
+      ],
+      "status_by_revision": {
+        "stock_PRG0": "not_tested",
+        "patched_PRG0": "inconclusive",
+        "stock_PRG1": "not_tested",
+        "patched_PRG1": "inconclusive"
+      },
+      "references": [
+        "https://www.mariowiki.com/List_of_Super_Mario_Bros._3_glitches",
+        "https://www.mariowiki.com/World_7-1_(Super_Mario_Bros._3)",
+        "https://github.com/neohack2023/ROM-Modding-Lab/blob/main/patches/nes/super-mario-bros-3/three-shields/tests/p0_pipe_qualification.json"
+      ]
+    },
+    {
+      "id": "H-SMB3-GLITCH-7-1-001",
+      "claim": "The documented World 7-1 wrong warp can corrupt/redirect level traversal with sprite-slot manipulation and may interact with damage timing.",
+      "state": "documented_vanilla_glitch_unrelated_to_current_world1_trace",
+      "caveat": "Do not assume the World 1-1 death flag is the World 7-1 wrong warp; reproduction and CPU trace are required.",
+      "references": [
+        "https://www.mariowiki.com/World_7-1_(Super_Mario_Bros._3)",
+        "https://deterest.blogspot.com/2018/02/smb3-wrong-warp-7-1-to-princess.html"
+      ]
+    },
+    {
+      "id": "H-SMB3-GRAY-HAMMER-001",
+      "claim": "Tanooki statue transformation during Hammer Suit pickup can create Gray Hammer Mario, invulnerable but unable to use exit pipes.",
+      "state": "documented_vanilla_glitch_needs_regression_baseline",
+      "test": "Naturally acquire Tanooki and Hammer Suit in the appropriate level, capture item collision and statue state in stock and patched ROMs; distinguish expected legacy behavior from a new regression.",
+      "references": [
+        "https://en.wikibooks.org/wiki/Super_Mario_Bros._3/Glitches",
+        "https://strategywiki.org/wiki/Super_Mario_Bros._3/Glitches"
+      ]
+    }
+  ],
+  "publication_rule": "No checkbox promotion without revision-qualified Mesen runtime receipts and a verified native transition/pickup witness."
+}
