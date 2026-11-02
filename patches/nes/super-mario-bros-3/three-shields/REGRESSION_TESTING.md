@@ -30,6 +30,19 @@ See [download and installation instructions](README.md) for ROM hashes and patch
 
 These checks cover controlled fixtures; extended playtesting is still needed.
 
+## Automated P0 probe results (2026-11-02)
+
+**New Mesen fixture results:** [14 suit-state cases and 6 protection cases](tests/README.md), with [machine-readable results](tests/p0_regression_results.json).
+
+- [x] **PRG0:** Seven RAM-seeded suit-state collision probes, HP 3 -> 2, zero life loss, native suit downgrade.
+- [x] **PRG1:** Same seven RAM-seeded suit-state collision probes.
+- [x] **PRG0:** Controlled baseline, flash protection and Star protection all behaved as expected.
+- [x] **PRG1:** Controlled baseline, flash protection and Star protection all behaved as expected.
+- [ ] **Both:** Repeat above using real power-up acquisition and verify full animations / suit-specific abilities.
+- [ ] **Both:** Create a genuine in-level pipe/bonus-room transition checkpoint and verify HP persistence.
+
+**Scope:** These checked items are *automated probe milestones only*. The separate high-priority player-facing checkboxes below remain open until the named full gameplay scenarios are verified. No actual pipe traversal has been accepted.
+
 ## B. Power-ups and suits: high priority
 
 | Test | PRG0 | PRG1 | Expected behavior |
