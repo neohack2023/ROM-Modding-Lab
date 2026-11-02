@@ -43,6 +43,17 @@ These checks cover controlled fixtures; extended playtesting is still needed.
 
 **Scope:** These checked items are *automated probe milestones only*. The separate high-priority player-facing checkboxes below remain open until the named full gameplay scenarios are verified. No actual pipe traversal has been accepted.
 
+## Gated native-glitch investigation
+
+A previous automated run observed `Player_InPipe` ($058C) becoming nonzero only after HP reached zero. **No real pipe traversal was demonstrated.** The [four-ROM stock-vs-patched investigation](https://github.com/neohack2023/ROM-Modding-Lab/issues/1) and [machine-readable hypothesis packet](tests/source_glitch_hypotheses.json) now track possible inherited behavior and avoid prematurely blaming the mod.
+
+- [ ] Compare identical pipe/death input sequences on **stock PRG0, patched PRG0, stock PRG1 and patched PRG1**.
+- [ ] Capture native pipe activation and destination before qualifying a successful transition.
+- [ ] Compare Gray Hammer/Tanooki and World 7-1 glitches only in separately controlled source-level fixtures.
+- [ ] Record bank-qualified PC and the exact frame of any injury/pipe overlap.
+
+These are research milestones; they do not close gameplay compatibility checkboxes below.
+
 ## B. Power-ups and suits: high priority
 
 | Test | PRG0 | PRG1 | Expected behavior |
