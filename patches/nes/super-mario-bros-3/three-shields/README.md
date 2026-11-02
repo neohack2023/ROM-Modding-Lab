@@ -5,14 +5,21 @@
 Instead of losing a life on an ordinary hit as Small Mario, you get **three shields**. Enemies remove one shield at a time. Collect a mushroom to get one back. Run out of shields and Mario dies as usual.
 
 **Version:** 0.2 (community playtest)  
-**Game:** Super Mario Bros. 3, **USA PRG1**, for the **original NES**  
+**Game:** Super Mario Bros. 3, **USA PRG0 or PRG1**, for the **original NES**  
 **Play with:** [Mesen](https://www.mesen.ca/) or another NES emulator that runs SMB3
 
 > **This is a patch, not a full game.** You need your own matching copy of Super Mario Bros. 3. It does **not** work with Super Mario All-Stars on SNES.
 
-## ⬇️ Download the patch
+## ⬇️ Choose your ROM version and download
 
-### [Download Three Shields v0.2 (.ips)](SMB3_NES_Three_Shields_v0.2_US_PRG1.ips)
+**These patches are not interchangeable.** Check the version of your original, unmodified Super Mario Bros. 3 NES ROM before applying one.
+
+| Your original NES ROM | Download | Testing status |
+|---|---|---|
+| **USA PRG0 / Rev 0** | **[Three Shields PRG0 playtest (.ips)](SMB3_NES_Three_Shields_v0.2_US_PRG0_PLAYTEST.ips)** | Passed Mesen core tests; community player feedback welcome |
+| **USA PRG1 / Rev 1** | **[Three Shields PRG1 v0.2 (.ips)](SMB3_NES_Three_Shields_v0.2_US_PRG1.ips)** | Existing user-playtested release |
+
+**Not sure which you have?** The file name may be misleading. Use the original ROM's SHA-256 shown in the technical table below. If neither matches, don't apply either IPS.
 
 If the link opens a GitHub file page instead of downloading, tap the **download icon** or **View raw**.
 
@@ -31,20 +38,20 @@ If the link opens a GitHub file page instead of downloading, tap the **download 
 
 ### Quick browser method (works on computers and many phones)
 
-1. [Download the Three Shields IPS patch](SMB3_NES_Three_Shields_v0.2_US_PRG1.ips) and keep your original **USA PRG1** `.nes` file handy.
+1. Download the **PRG0 or PRG1 IPS matching your original ROM** from the table above and keep your original `.nes` file handy.
 2. Open [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/).
 3. Under **ROM file**, select your original `.nes` game.
 4. Under **Patch file**, select our `.ips` patch.
 5. Choose **Apply patch**, then save the resulting `.nes` file.
 6. Open the new `.nes` game in a compatible NES emulator.
 
-**Important:** A *patcher* creates the modified ROM; an *emulator* plays it. They are separate tools. Some phones may require using the Files app to save or move the patched game. If you get an error or the game acts strangely, verify the original ROM is the **USA PRG1** revision. Don't patch an already modified ROM.
+**Important:** A *patcher* creates the modified ROM; an *emulator* plays it. They are separate tools. Some phones may require using the Files app to save or move the patched game. If you get an error or the game acts strangely, verify the original ROM matches the **PRG0 or PRG1 patch you chose**. Don't patch an already modified ROM.
 
 ## 🎮 How to get it running
 
 You need three things:
 
-1. Your own unmodified **Super Mario Bros. 3 (USA) (PRG1)** NES ROM (a `.nes` file).
+1. Your own unmodified **Super Mario Bros. 3 (USA) PRG0 or PRG1** NES ROM (a `.nes` file).
 2. The **Three Shields .ips patch** from the link above.
 3. An IPS patching app, such as [Floating IPS (Flips)](https://www.romhacking.net/utilities/1040/), plus an NES emulator such as Mesen.
 
@@ -53,7 +60,7 @@ You need three things:
 1. Download the `.ips` file above.
 2. Open Floating IPS and choose **Apply Patch**.
 3. Select the downloaded **Three Shields .ips** file.
-4. Select your **original SMB3 USA PRG1 .nes** file.
+4. Select the **original SMB3 .nes** file that matches the PRG0 or PRG1 patch you downloaded.
 5. Choose a new output filename, such as `SMB3-Three-Shields.nes`, so your original stays safe.
 6. Open the **new** `.nes` file in Mesen, then press **Start** and play normally.
 
@@ -76,7 +83,7 @@ You don't need special button combinations or a separate game menu. **Play SMB3 
 
 ## ✅ What we've tested
 
-The v0.2 patch is based on our playtested NES build. Mesen tests passed for damage, mushroom pickup and healing, normal death, Big Mario shrinking, the shield display at 3/2/1/0, and returning from the world map into a level. We also compared sample screenshots to check for unintended HUD changes.
+The PRG1 v0.2 patch is based on our user-playtested NES build. The PRG0 playtest is a separately adapted build that passed 27 automated core acceptance checks plus mushroom-cap and death/reentry checks; it has not yet had the same broader hands-on player testing. Mesen tests passed for damage, mushroom pickup and healing, normal death, Big Mario shrinking, the shield display at 3/2/1/0, and returning from the world map into a level. We also compared sample screenshots to check for unintended HUD changes.
 
 **Still looking for community testing:** other worlds, Luigi/two-player, special suits, pipes, bonus rooms, and long sessions. It is a **playtest release**, not a promise that every possible scene has been checked.
 
@@ -96,10 +103,13 @@ You can skip this section if the game runs correctly.
 
 | Item | SHA-256 |
 |---|---|
-| Required original ROM (USA PRG1) | `4377a7f5e6eb50bdd2ac6f249bf1a7085500aca8eb41f38545c3a2731c51a579` |
-| Three Shields v0.2 IPS patch | `ad4b65ab564ef3dddc26dfee9cca89617fddb5cd06af2e4b108742dcf031255d` |
-| Resulting patched NES ROM | `fa84a7f83d1a72639c5e1b270ac160cb2706b31807200cce26a1ddf7f5b8b7ce` |
+| Original ROM **PRG0 / Rev 0** | `6ea0777ca520ba7ad7b0ea0f6452140d59aa0b1dffe5045cb1e8020dde10c267` |
+| PRG0 playtest IPS | `e7c5ab964323ce7309b63d4aed48e831819c80f685659cf46fc1f0776f7fe444` |
+| Resulting patched **PRG0** ROM | `2bfef87ae55ad28914435e104c75844c1eca0c122e948e431c7638ac2b119429` |
+| Original ROM **PRG1 / Rev 1** | `4377a7f5e6eb50bdd2ac6f249bf1a7085500aca8eb41f38545c3a2731c51a579` |
+| PRG1 v0.2 IPS | `ad4b65ab564ef3dddc26dfee9cca89617fddb5cd06af2e4b108742dcf031255d` |
+| Resulting patched **PRG1** ROM | `fa84a7f83d1a72639c5e1b270ac160cb2706b31807200cce26a1ddf7f5b8b7ce` |
 
-These checksums identify the exact revision we tested. If the patch doesn't work, the most common first thing to check is whether your original ROM matches **USA PRG1**, rather than PRG0 or another revision.
+These checksums identify the exact revision we tested. If the patch doesn't work, confirm the original ROM's SHA-256 matches the revision corresponding to your selected IPS. PRG0, PRG1, and other revisions must not share one IPS.
 
 This download contains patch changes only. It does not include the original game.
