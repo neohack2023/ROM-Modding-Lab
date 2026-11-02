@@ -1,0 +1,25 @@
+# No commercial ROMs, patched ROMs, BIOS, disassembly dumps or local evidence
+*.nes
+*.sfc
+*.smc
+*.n64
+*.z64
+*.v64
+*.gb
+*.gbc
+*.gba
+*.iso
+*.bin
+*.cue
+*.chd
+*.bios
+*.mss
+*.sav
+*.srm
+*.sqlite
+*.db
+__pycache__/
+*.pyc
+.env
+.local/
+evidence/raw/
