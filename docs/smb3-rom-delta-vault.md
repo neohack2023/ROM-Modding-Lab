@@ -6,7 +6,7 @@ This tooling keeps historical **derived** Super Mario Bros. 3 NES builds reprodu
 
 The Host 02 NES workspace has seven historical `build/working/*.nes` revisions. All seven have been represented by compressed IPS deltas (zlib) with a SHA-256 manifest. Each can reconstruct byte-for-byte from the user's **USA PRG1 / Rev 1** original. The separate **USA PRG0 / Rev 0** pristine ROM and the published PRG0/PRG1 IPS files are protected and excluded from retirement.
 
-The portable utility [`tools/smb3_rom_delta_vault.py`](../../../tools/smb3_rom_delta_vault.py) is environment-configured, does not contain private machine paths, and has **no deletion command**.
+The portable utility [`tools/smb3_rom_delta_vault.py`](../tools/smb3_rom_delta_vault.py) is environment-configured, does not contain private machine paths, and has **no deletion command**.
 
 ## Commands (PowerShell)
 
