@@ -54,6 +54,21 @@ A previous automated run observed `Player_InPipe` ($058C) becoming nonzero only 
 
 These are research milestones; they do not close gameplay compatibility checkboxes below.
 
+## Community regression: room-entry HP reset and missing boss HUD (reported 2026-11-05)
+
+**Open bug:** [Issue #3: HP resets on room entry, shields disappear in boss areas](https://github.com/neohack2023/ROM-Modding-Lab/issues/3). This is a tester report; it has **not been reproduced or fixed**. The reported ROM revision, emulator, and exact level are currently unknown.
+
+- [ ] **PRG0:** Confirm HP remains at 2/3 or 1/3 after a genuine pipe/door/bonus-room transition.
+- [ ] **PRG1:** Repeat with the same real transition.
+- [ ] **PRG0:** Verify shield HUD is redrawn in boss/fortress room after graphics/nametable reload, even without HP change.
+- [ ] **PRG1:** Repeat boss/fortress HUD redraw.
+- [ ] **Both:** Compare `$0729`, `$7FCE`, `$7FCF`, `$072A`, PPU tiles `$2B03-$2B05`, and MMC3 bank before/during/after native transition.
+- [ ] **Both:** New life/level entry refills HP while in-level room changes do **not**.
+- [ ] **Both:** Baseline Mesen damage, mushroom, death, suit and guard regression remains passing.
+- [ ] **Both:** Confirm world-map HUD/border and status-bar tiles are not corrupted.
+
+**Static source warning:** `prg026.asm` clears the init marker for any `Map_Operation != $10` and the HUD cache can skip redraw on unchanged HP. Both require revision-qualified runtime validation before changing patches.
+
 ## B. Power-ups and suits: high priority
 
 | Test | PRG0 | PRG1 | Expected behavior |
