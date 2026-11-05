@@ -1,0 +1,43 @@
+--- a/source/PRG/prg026.asm
++++ b/source/PRG/prg026.asm
+@@ -3697,10 +3697,14 @@
+     LDA Map_Operation
+     CMP #$10
+     BEQ NESHP_InLevel
++    ; Only world-map state resets new-attempt HP.
++    CMP #$0D
++    BNE NESHP_PreserveHP
+     LDA #$00
+     STA $7FCF
++NESHP_PreserveHP:
+     LDA #$FF
+-    STA $072A ; source-labeled unused byte; last rendered HP
++    STA $072A
+     JMP NESHP_NoWrite
+ 
+ NESHP_InLevel:
+--- a/source/PRG/prg030.asm
++++ b/source/PRG/prg030.asm
+@@ -1664,7 +1664,7 @@
+ PRG030_8B03:
+ 	STX Update_Select	; Set Update_Select
+ 
+-	JSR Video_Do_Update	; Video update
++	JSR NESHP_StatusBarReload_Hook	; Native statusbar rebuild + invalidate shield cache
+ 
+ 	; Set bank at A000 to page 26
+ 	LDA #26
+@@ -5939,3 +5939,13 @@
+ 
+ ; NOTE: The remaining ROM space was all blank ($FF)
+ 
++
++
++; V03: Called only by native level/room status-bar initialization.
++; Preserve standard Video_Do_Update behavior, but invalidate last drawn HP
++; after the stock template has been restored in the PPU.
++NESHP_StatusBarReload_Hook:
++	JSR Video_Do_Update
++	LDA #$FF
++	STA $072A
++	RTS
