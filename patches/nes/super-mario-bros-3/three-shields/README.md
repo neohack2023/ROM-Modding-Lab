@@ -27,7 +27,7 @@ Instead of losing a life on an ordinary hit as Small Mario, you get **three shie
 
 > **This is a patch, not a full game.** You need your own matching copy of Super Mario Bros. 3. It does **not** work with Super Mario All-Stars on SNES.
 
-## ⬇️ Choose your ROM version and download
+## Legacy v0.2 download links (rollback and historical playtest)
 
 **These patches are not interchangeable.** Check the version of your original, unmodified Super Mario Bros. 3 NES ROM before applying one.
 

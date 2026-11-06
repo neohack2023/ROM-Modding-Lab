@@ -1,5 +1,5 @@
 {
-  "status": "PUBLIC_PLAYTEST_CANDIDATE",
+  "status": "PUBLISHED_COMMUNITY_PLAYTEST",
   "version": "0.3",
   "non_gold": true,
   "compatibility": "Old Mesen state files read unchanged into the new ROM; game has no NES battery-backed save",
@@ -52,5 +52,6 @@
       "rom_header_battery_flag": false
     }
   },
-  "build_utc": "2026-11-06T03:46:11.050323+00:00"
+  "build_utc": "2026-11-06T03:46:11.050323+00:00",
+  "publication_commit": "d51faebad09f6a5d460bcd38a9aa98c95a052e5b"
 }
