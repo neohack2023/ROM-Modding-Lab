@@ -1,0 +1,10 @@
+--- a/source/PRG/prg005.asm
++++ b/source/PRG/prg005.asm
+@@ -6179,7 +6179,7 @@ Level_DoChangeReset:
+ 
+ PRG005_BE35:
+-	LDY #$09	 	; Y = 9
++	LDY #$07	 	; Y = 7, last valid entry of SpecialObj_ID[0..7]
+ 
+ PRG005_BE37:
+ 	STA SpecialObj_ID,Y	; Set special object ID to 0
