@@ -50,3 +50,15 @@ The event-driven hook is currently verified for the normal level loader. **It ha
 - This repository contains no original ROMs, debug patched ROMs, or unpublished game-binary patches for this experiment.
 
 **Status: partially verified engineering candidate. Not a public v0.3 release.**
+
+## 2026-11-05 update: actual door-transition refill traced and addressed in a new **debug-only** candidate
+
+A player manually reproduced the door bug in Mesen with **2/3 HP before entering and 3/3 afterward**. The passive `manual_door_trace_01/events.tsv` captured, at **frame 65342**, the native `Level_DoChangeReset` loop at PRG5 CPU `$BE3A` clearing **both** `$7FCF` and `$7FCE`. The existing PRG26 HUD initializer immediately refilled HP from zero to three at `$B519`. The loop starts at Y=9, but `SpecialObj_ID` is declared as only eight bytes at `$7FC6–$7FCD`. Y=8 and Y=9 write into the custom HP and initialization marker bytes. This is a compatibility collision between original SMB3's reset-loop behavior and our mod's chosen RAM locations, not proof of an original-game health bug.
+
+**New [bounds-corrected source-only patch](specialobj_bounds04_source.diff):** change `PRG005_BE35: LDY #$09` to `LDY #$07`. Exactly **one ROM byte** at file offset `0xBE46` differs from the prior event-driven candidate. Both PRG0 and PRG1 builds and private debug IPS reconstructions are byte-verified.
+
+**Targeted Mesen old-vs-new tests passed on both PRG0 and PRG1.** With HP=2 and marker `$A5` in a previously verified checkpoint, the engine's real `Level_DoChangeReset` was invoked by setting its `Level_ChangeReset` flag to zero. The old build performed ten special-object clearing iterations and reset HP to three; the corrected build performed eight iterations, **no HP or marker writes**, and kept HP at two for the remaining test frames. This is a **controlled invocation**, not yet a human-played door/pipe rerun of the fixed ROM.
+
+Private candidate SHA-256: PRG0 `01e3051fed11b8dac98ec94919dfb974501c1ab29629c115da9486706dfe5bdb`; PRG1 `369e5cf0f316a89f538fad7923d7c6fe0c5741b7506b5c20ba5e8a116d616467`.
+
+**Release status remains blocked:** Retest the exact door on the corrected build, inspect native boss-room graphics, run broader dual-revision gameplay regression, and only then consider a new public release. Both published v0.2 IPS files remain untouched.
