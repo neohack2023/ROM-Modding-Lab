@@ -1,0 +1,56 @@
+{
+  "status": "PUBLIC_PLAYTEST_CANDIDATE",
+  "version": "0.3",
+  "non_gold": true,
+  "compatibility": "Old Mesen state files read unchanged into the new ROM; game has no NES battery-backed save",
+  "state_qa_cases": [
+    "PRG1_v02_on_v02",
+    "PRG1_v02_on_v03",
+    "PRG1_v03_previous_on_v03",
+    "PRG1_v03_current_on_v03",
+    "PRG0_v02_on_v02",
+    "PRG0_v02_on_v03",
+    "PRG1_first_01_on_v03"
+  ],
+  "platform_qa": "MesenCE 2.2.1",
+  "release_uncertainties": [
+    "Other emulators save-state compatibility",
+    "2P/multi-world/special suits",
+    "Boss-door activation screenshot still needs user QA"
+  ],
+  "revisions": {
+    "PRG0": {
+      "source_unmodified_rom_sha256": "6ea0777ca520ba7ad7b0ea0f6452140d59aa0b1dffe5045cb1e8020dde10c267",
+      "public_v02_ips_sha256": "e7c5ab964323ce7309b63d4aed48e831819c80f685659cf46fc1f0776f7fe444",
+      "public_v02_rom_sha256": "2bfef87ae55ad28914435e104c75844c1eca0c122e948e431c7638ac2b119429",
+      "new_v03_rom_sha256": "01e3051fed11b8dac98ec94919dfb974501c1ab29629c115da9486706dfe5bdb",
+      "new_v03_ips_sha256": "027d61787add22e664f0c28079874bc62f5323b5a0c2cb58a7c992384ebe6966",
+      "new_v03_ips_bytes": 7253,
+      "new_v03_ips_filename": "SMB3_NES_Three_Shields_v0.3_US_PRG0_PLAYTEST.ips",
+      "v02_to_v03_changed_bytes": 169,
+      "changed_banks": [
+        5,
+        26,
+        30
+      ],
+      "rom_header_battery_flag": false
+    },
+    "PRG1": {
+      "source_unmodified_rom_sha256": "4377a7f5e6eb50bdd2ac6f249bf1a7085500aca8eb41f38545c3a2731c51a579",
+      "public_v02_ips_sha256": "ad4b65ab564ef3dddc26dfee9cca89617fddb5cd06af2e4b108742dcf031255d",
+      "public_v02_rom_sha256": "fa84a7f83d1a72639c5e1b270ac160cb2706b31807200cce26a1ddf7f5b8b7ce",
+      "new_v03_rom_sha256": "369e5cf0f316a89f538fad7923d7c6fe0c5741b7506b5c20ba5e8a116d616467",
+      "new_v03_ips_sha256": "38700dd5413a905f286408d3773dd81e052c2a6210c622de0209428a940ed020",
+      "new_v03_ips_bytes": 7253,
+      "new_v03_ips_filename": "SMB3_NES_Three_Shields_v0.3_US_PRG1_PLAYTEST.ips",
+      "v02_to_v03_changed_bytes": 169,
+      "changed_banks": [
+        5,
+        26,
+        30
+      ],
+      "rom_header_battery_flag": false
+    }
+  },
+  "build_utc": "2026-11-06T03:46:11.050323+00:00"
+}

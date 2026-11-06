@@ -1,10 +1,27 @@
 # Super Mario Bros. 3 (NES): Three Shields 🛡️
 
+## v0.3 playtest update (room-transition fix + save compatibility)
+
+**Latest playtest version: v0.3**. The original v0.2 IPS files remain available below as rollback downloads.
+
+| Original unmodified ROM revision | v0.3 playtest IPS |
+| --- | --- |
+| USA **PRG0 / Rev 0** | [Download Three Shields v0.3 PRG0 IPS](SMB3_NES_Three_Shields_v0.3_US_PRG0_PLAYTEST.ips) |
+| USA **PRG1 / Rev 1** | [Download Three Shields v0.3 PRG1 IPS](SMB3_NES_Three_Shields_v0.3_US_PRG1_PLAYTEST.ips) |
+
+**Changes:** Fixed the memory collision where SMB3's special-object reset loop cleared our HP and initialization marker when entering another room. Also changed the HUD refresh to follow native level/status-bar reload rather than periodic redraw. This addresses the reported door-entry HP refill and minimizes unnecessary status-bar writes.
+
+**Save migration:** [How to preserve and load your existing v0.2 Mesen save states](SAVE_COMPATIBILITY_V03.md). Testing on MesenCE 2.2.1 confirms v0.2 PRG0 and PRG1 states load into their matching v0.3 patches with health, lives, suit and scene preserved in the tested fixtures. **Back up old ROMs and states before upgrading; do not overwrite them.** Other emulators and additional gameplay situations remain unverified.
+
+**Testing status:** PRG1 normal-room and boss-door HP persistence user-verified; PRG0/PRG1 controlled native reset tests passed. Still a community **playtest**, not a final release. GOLD experimental builds are excluded.
+
+---
+
 **A simple health-bar mod for the original NES Super Mario Bros. 3.**
 
 Instead of losing a life on an ordinary hit as Small Mario, you get **three shields**. Enemies remove one shield at a time. Collect a mushroom to get one back. Run out of shields and Mario dies as usual.
 
-**Version:** 0.2 (community playtest)  
+**Version:** 0.3 (community playtest; v0.2 remains available)
 **Game:** Super Mario Bros. 3, **USA PRG0 or PRG1**, for the **original NES**  
 **Play with:** [Mesen](https://www.mesen.ca/) or another NES emulator that runs SMB3
 
